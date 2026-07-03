@@ -1,0 +1,43 @@
+labels:
+
+  - name: epic
+    color: "6f42c1"
+
+  - name: feature
+    color: "1d76db"
+
+  - name: task
+    color: "0e8a16"
+
+  - name: bug
+    color: "d73a4a"
+
+  - name: enhancement
+    color: "a2eeef"
+
+  - name: technical-debt
+    color: "fbca04"
+
+  - name: domain
+    color: "5319e7"
+
+  - name: application
+    color: "0366d6"
+
+  - name: infrastructure
+    color: "cfd3d7"
+
+  - name: api
+    color: "0e8a16"
+
+  - name: database
+    color: "f9d0c4"
+
+  - name: testing
+    color: "bfdadc"
+
+  - name: documentation
+    color: "0075ca"
+
+  - name: devops
+    color: "0052cc"

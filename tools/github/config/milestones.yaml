@@ -1,0 +1,32 @@
+repository:
+  owner: jbuitragoSH
+  name: knowledge-platform
+
+milestones:
+
+  - title: Release 0.1
+    description: Infraestructura Base
+
+  - title: Release 0.2
+    description: Academic Knowledge
+
+  - title: Release 0.3
+    description: Curriculum
+
+  - title: Release 0.4
+    description: Planning
+
+  - title: Release 0.5
+    description: Scheduling
+
+  - title: Release 0.6
+    description: Intelligence
+
+  - title: Release 0.7
+    description: Frontend
+
+  - title: Release 0.8
+    description: Integrations
+
+  - title: Release 1.0
+    description: First Production Release

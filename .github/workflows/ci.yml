@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: tools/github
+
+    steps:
+
+      - name: Show working directory
+        run: |
+           pwd
+           ls -la
+           test -f pyproject.toml
+
+      - name: Verify toolchain
+        run: |
+           python --version
+           uv --version
+           make --version
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: astral-sh/setup-uv@v6
+
+      - run: uv sync --dev
+
+      - run: make verify
