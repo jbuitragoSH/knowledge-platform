@@ -30,12 +30,6 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
-      - name: Show working directory
-        run: |
-          pwd
-          ls -la
-          test -f pyproject.toml
-
       - name: Verify toolchain
         run: |
           python --version
