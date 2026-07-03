@@ -10,6 +10,7 @@ on:
   pull_request:
     branches:
       - main
+
   workflow_dispatch:
 
 jobs:
@@ -21,19 +22,6 @@ jobs:
         working-directory: tools/github
 
     steps:
-
-      - name: Show working directory
-        run: |
-           pwd
-           ls -la
-           test -f pyproject.toml
-
-      - name: Verify toolchain
-        run: |
-           python --version
-           uv --version
-           make --version
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -42,6 +30,20 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
-      - run: uv sync --dev
+      - name: Show working directory
+        run: |
+          pwd
+          ls -la
+          test -f pyproject.toml
 
-      - run: make verify
+      - name: Verify toolchain
+        run: |
+          python --version
+          uv --version
+          make --version
+
+      - name: Install dependencies
+        run: uv sync --dev
+
+      - name: Verify project
+        run: make verify
